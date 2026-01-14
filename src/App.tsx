@@ -3,6 +3,7 @@ import LineChartss from "./componets/LineChartss";
 import LoginButton from "./componets/LoginButton";
 import LogoutButton from "./componets/LogoutButton";
 import PieCharts from "./componets/PieCharts";
+import SendEmail from "./componets/SendEmail";
 import { useCounterStore } from "./Stores/store";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <div className="bg-gray-400 sm:h-85 sm:w-85 p-4 m-2 h-70 w-70 rounded-2xl">
           <AreaChartss />
         </div>
+        <SendEmail />
         <div className="bg-gray-400 sm:h-85 sm:w-85 p-4 m-2 h-70 w-70 rounded-2xl">
           <LineChartss />
         </div>
