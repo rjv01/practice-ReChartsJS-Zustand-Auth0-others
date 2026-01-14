@@ -16,7 +16,7 @@ function SendEmail() {
 
         try{
             setLoading(true);
-            await axios.post(`BACKEND_URL/sendyouremailid`,{
+            await axios.post(`${BACKEND_URL}/sendyouremailid`,{
                 email,
             });
             alert("Email Sent successfully, check your email");
