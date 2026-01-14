@@ -8,8 +8,11 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173"];
-
+const allowedOrigins = [
+        "https://practice-re-charts-js-zustand-auth0.vercel.app/",
+        "http://localhost:5173"
+    ];
+    
 app.use(
     cors({
         origin: allowedOrigins,

@@ -1,7 +1,9 @@
 import axios from 'axios';
-import { useState } from 'react'
+import { useState } from 'react';
+
 
 function SendEmail() {
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
     const [email,setEmail] = useState<string>("");
     const [loading,setLoading] = useState<boolean>(false);
 
@@ -14,7 +16,7 @@ function SendEmail() {
 
         try{
             setLoading(true);
-            await axios.post("http://localhost:5000/sendyouremailid",{
+            await axios.post(`BACKEND_URL/sendyouremailid`,{
                 email,
             });
             alert("Email Sent successfully, check your email");
