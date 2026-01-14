@@ -6,9 +6,9 @@ type CounterStore = {
     decrement:() => void,
 };
 
-type EmailStore = {
-    
-}
+// type EmailStore = {
+
+// }
 
 export const useCounterStore = create<CounterStore>((set)=>({
     count:0,
@@ -20,6 +20,6 @@ export const useCounterStore = create<CounterStore>((set)=>({
     },
 }));
 
-export const useSendEmail = create<EmailStore>((set)=>({
+// export const useSendEmail = create<EmailStore>((set)=>({
 
-}));
+// }));
