@@ -24,23 +24,23 @@ app.use(express.json());
 
 
 const transporter = nodemailer.createTransport({
-    secure:true,
+    secure:false,
     host:"smtp.gmail.com",
-    port:465,
+    port:587,
     auth:{
         user:process.env.EMAIL,
         pass:process.env.PASSWORD,
     }
 });
 
-function sendMail(to,sub,msg){
-    transporter.sendMail({
+async function sendMail(to,sub,msg){
+    const info = await transporter.sendMail({
         from:process.env.EMAIL,
         to,
         subject:sub,
         html:msg,
     })
-    console.log("Message sent");
+    console.log("Message sent",info.messageId);
 };
 
 
@@ -49,7 +49,7 @@ app.post("/sendyouremailid",async (req,res) => {
     const { email } = req.body;
 
     if(!email){
-        return res.send(400).json({message:"Email is required"});
+        return res.status(400).json({message:"Email is required"});
     }
     
     try {
